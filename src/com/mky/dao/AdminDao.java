@@ -20,11 +20,9 @@ public class AdminDao {
         stmt.setString(1, name);
 
         ResultSet res = stmt.executeQuery();
-        boolean is = false;
-        while (res.next()) {
-            is = true;
-            break;
+       if(res.next()) {
+            return res.getInt(1) > 0;
         }
-        return is;
+       return false;
     }
 }

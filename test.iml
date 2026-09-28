@@ -19,17 +19,18 @@
       <excludeFolder url="file://$MODULE_DIR$/src/kk" />
       <excludeFolder url="file://$MODULE_DIR$/src/kkk" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="25" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="servlet-api" level="project" />
+    <orderEntry type="library" name="servlet-api (2)" level="project" />
+    <orderEntry type="library" name="mysql-connector-j-26.7.0" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/web/lib" />
+          <root url="file://$MODULE_DIR$/web/WEB-INF/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/web/lib" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/web/WEB-INF/lib" recursive="false" />
       </library>
     </orderEntry>
   </component>

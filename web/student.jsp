@@ -47,7 +47,7 @@
         <td>1</td><td>2024010101</td><td>张三</td><td>男</td>
         <td>计算机学院</td><td>电子计算机工程</td><td>电计202401</td><td>在读</td>
         <td>
-            <a href="#">修改</a>
+            <a href="addStudent.jsp">修改</a>
             <a href="#" onclick="return delConfirm()">删除</a>
         </td>
     </tr>
@@ -55,7 +55,7 @@
         <td>2</td><td>2024010102</td><td>李四</td><td>女</td>
         <td>计算机学院</td><td>电子计算机工程</td><td>电计202401</td><td>在读</td>
         <td>
-            <a href="#">修改</a>
+            <a href="addStudent.jsp">修改</a>
             <a href="#" onclick="return delConfirm()">删除</a>
         </td>
     </tr>

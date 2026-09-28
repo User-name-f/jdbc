@@ -23,11 +23,12 @@ public class Login extends HttpServlet {
             {
                 HttpSession session = req.getSession();
                 session.setAttribute("loginAdmin", admin);
-                resp.sendRedirect("index.jsp");
+                resp.sendRedirect("student.jsp");
+                System.out.println(is);
             }
             else
             {
-                System.out.println("<h3>失败</h3>");
+                System.out.println(is);
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
