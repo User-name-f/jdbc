@@ -6,6 +6,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="pojo.Clazz" %>
+<%@ page import="com.mky.dao.ClazzDao" %>
+<%
+    List<Clazz> clazzList = new ClazzDao().findAllClazz();
+%>
 <html>
 <head>
     <title>add</title>
@@ -32,56 +38,74 @@
         .form-table input[type="text"] {
             width: 100%;
         }
+        .form-table select {
+            width: 100%;
+        }
+        .form-table td.buttons {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-<form action="#" method="post">
+<form action="addStudent" method="post">
     <table class="form-table">
         <tr>
             <th colspan="2">▼添加/修改学生信息</th>
         </tr>
         <tr>
             <td class="label">学号：</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="student_no"></td>
         </tr>
         <tr>
             <td class="label">姓名：</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="name" ></td>
         </tr>
         <tr>
             <td class="label">性别：</td>
             <td>
-                <input type="radio" name="gender" >男
-                <input type="radio" name="gender" >女
+                <input type="radio" name="gender" value="男">男
+                <input type="radio" name="gender" value="女">女
             </td>
         </tr>
         <tr>
             <td class="label">班级：</td>
             <td>
-                <select>
-                    <option>电计2401</option>
-                    <option>电计2402</option>
-                    <option>电计2403</option>
+                <select name="clazz_id">
+                    <option value="">请选择班级</option>
+                    <%
+                        for (Clazz clazz : clazzList) {
+                    %>
+                    <option value="<%=clazz.getId()%>"><%=clazz.getClazz_name()%></option>
+                    <%
+                        }
+                    %>
                 </select>
             </td>
         </tr>
         <tr>
             <td class="label">电话：</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="phone" ></td>
         </tr>
         <tr>
             <td class="label">入学年：</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="enroll_year" ></td>
         </tr>
         <tr>
             <td class="label">状态：</td>
             <td>
-                <select>
-                    <option>在读</option>
-                    <option>休学</option>
-                    <option>退学</option>
-                    <option>毕业</option>
+                <select name="status">
+                    <option value="">请选择状态</option>
+                    <option value="1" >在读</option>
+                    <option value="2" >休学</option>
+                    <option value="3" >退学</option>
+                    <option value="4" >毕业</option>
                 </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="buttons">
+                <input type="submit" value="保存">
+                <input type="button" value="返回" onclick="location.href='student'">
             </td>
         </tr>
     </table>
